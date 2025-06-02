@@ -1,0 +1,28 @@
+{
+  "name": "quizappapi",
+  "version": "1.0.0",
+  "description": "A quiz application api",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinsinha1304/quizAppApi.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Expressjs",
+    "MySQL"
+  ],
+  "author": "Sachin Sinha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachinsinha1304/quizAppApi/issues"
+  },
+  "homepage": "https://github.com/sachinsinha1304/quizAppApi#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  }
+}

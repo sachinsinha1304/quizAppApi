@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional)
+.vscode/
+
+# Coverage reports
+coverage/
+
+# Database dumps
+*.sql
+*.dump
+
+# Built files (if using TypeScript or bundlers)
+dist/
+build/
