@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: sachin
+      MYSQL_DATABASE: quiz
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-psachin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - quiz-network
+
+  api:
+    build: .
+    container_name: quiz-api-container
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: mysql-container
+      DB_USER: root
+      DB_PASS: sachin
+      DB_NAME: quiz
+    depends_on:
+      - db
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl -f http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - quiz-network
+    networks:
+      - quiz-network
+
+volumes:
+  mysql-data:
+
+networks:
+  quiz-network:
